@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     StringBuilder dadosBluetooth = new StringBuilder();
     String dadosCompletos = new String(" ");
     //String dadosFinals = new String(" ");
-    public String title = new String(" ");
+    public String title = " ";
 
     public String[]names= title.split(" ");
 
@@ -64,15 +65,19 @@ public class MainActivity extends AppCompatActivity {
     BluetoothDevice meuDevice = null;
     BluetoothSocket meuSocket = null;
     boolean conexao = false;
+    CustomAdapter customAdapter;
 
     private static String MAC = null;
     UUID MEU_UUID = UUID.fromString("00001101-0000-1000-8000-00805f9b34fb");
     Handler mhandler;
 
     public void call(){
-        gridView = findViewById(R.id.gridView);
-        CustomAdapter customAdapter= new CustomAdapter(names,this);//data
-        gridView.setAdapter(customAdapter);
+        if (customAdapter==null){
+            customAdapter= new CustomAdapter(names,this);
+            gridView.setAdapter(customAdapter);
+        }else {
+            customAdapter.setImageNames(names);
+        }
     }
 
     @Override
@@ -80,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        gridView = findViewById(R.id.gridView);
         mBlueIV = findViewById(R.id.bluetoothIv);
         mOnBtn = findViewById(R.id.onButn);
         mOffBtn = findViewById(R.id.offButn);
@@ -205,8 +210,7 @@ public class MainActivity extends AppCompatActivity {
         btnLed1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
+                dadosBluetooth.delete(0,dadosBluetooth.length());
                  if(conexao){
 //                     String X = setx.getText().toString();
 //                     String Y = sety.getText().toString();
@@ -218,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
 //                     connectedThread.enviar(truyen);
 //                     connectedThread.enviar("\n");
                     connectedThread.enviar("\n");
-                    connectedThread.enviar("a\n");
+                    connectedThread.enviar("led1\n");
                     btnLed1.setText("Đang tính , không ấn vô");
                 }else {
                     Toast.makeText(getApplicationContext(),"Vui lòng kết nối thiết bị trước tiên", Toast.LENGTH_SHORT).show();
@@ -246,10 +250,12 @@ public class MainActivity extends AppCompatActivity {
                     int tamInfomacao =  tach[0].length();
                     int tamInfomacao1 = tach[1].length();
                     int tamInfomacao2 = tach[2].length();
+
                     if(tach[0].charAt(0) == '{'){
                         String dadosFinals = tach[0].substring(1, tamInfomacao);
                         title = dadosFinals;
                         names=title.split(" ");
+                        Log.e("tienld", "handleMessage: " + names );
                         call();
 
                   //      System.out.println(title);
@@ -259,7 +265,6 @@ public class MainActivity extends AppCompatActivity {
 //                        }else if(dadosFinals.contains("ledoff")){
 //                            btnLed1.setText("hoàn thành tính toán");
 //                        }
-
                     }
                      if(tach[1].charAt(0) == 'a'){
                         String dadosFinals1 = tach[1].substring(1,tamInfomacao1);
@@ -273,9 +278,8 @@ public class MainActivity extends AppCompatActivity {
 //                    dadosCompletos = dadosBluetooth.substring(0,fimInfomaco);
 
                 }
-                dadosBluetooth.delete(0,dadosBluetooth.length());
+                //dadosBluetooth.delete(0,dadosBluetooth.length());
                 btnLed1.setText("XONG, NHẤN ĐỂ TÍNH LẠI");
-
 
                // dadosBluetooth.replace(0,dadosBluetooth.length(), " ") ;
 
@@ -395,7 +399,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public class CustomAdapter extends BaseAdapter {
-        private final String[] imageNames;
+        private String[] imageNames;
         private Context context;
         private final LayoutInflater layoutInflater;
 
@@ -403,6 +407,12 @@ public class MainActivity extends AppCompatActivity {
             this.imageNames = imageNames;
             this.context = context;
             this.layoutInflater=(LayoutInflater) context.getSystemService(LAYOUT_INFLATER_SERVICE);
+        }
+
+
+        public void setImageNames(String[] imageNames){
+            this.imageNames = imageNames;
+            notifyDataSetChanged();
         }
 
         @Override
