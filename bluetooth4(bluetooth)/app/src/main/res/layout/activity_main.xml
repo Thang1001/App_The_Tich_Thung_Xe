@@ -7,168 +7,180 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="200dp">
     <RelativeLayout
-        android:layout_width="125dp"
-        android:layout_height="match_parent">
-    <ImageView
-        android:id="@+id/bluetoothIv"
-        android:layout_width="120dp"
-        android:layout_height="100dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="5dp"
-        />
-
-    <Button
-        android:id="@+id/onButn"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="100dp"
-        android:backgroundTint="#00ACC1"
-        android:text="ON Bluetooth"
-        android:textSize="12dp" />
-
-    <Button
-        android:id="@+id/offButn"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="145dp"
-        android:backgroundTint="#332F2F"
-        android:text="off Bluetooth"
-        android:textSize="12dp" />
-</RelativeLayout>
-
-    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="130dp"
-        android:layout_marginRight="3dp"
-        android:layout_marginBottom="0dp"
-        android:background="#F3FAF2"
-        android:orientation="vertical">
+        android:layout_height="200dp">
+        <RelativeLayout
+            android:layout_width="125dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/bluetoothIv"
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="5dp"
+                />
 
-        <Button
-            android:id="@+id/btnConexao"
+            <Button
+                android:id="@+id/onButn"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="100dp"
+                android:backgroundTint="#00ACC1"
+                android:text="ON Bluetooth"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/offButn"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="145dp"
+                android:backgroundTint="#332F2F"
+                android:text="off Bluetooth"
+                android:textSize="12dp" />
+        </RelativeLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginRight="5dp"
-            android:backgroundTint="#00ACC1"
-            android:text="Kết nối với esp32"
-            android:textSize="12dp" />
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="130dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="0dp"
+            android:background="#F3FAF2"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/start"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginRight="5dp"
-            android:backgroundTint="#00ACC1"
-            android:text="nhấn vào để tính toán"
-            android:textSize="12dp"/>
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="2dp"
-    android:layout_marginRight="5dp"
-    android:layout_marginLeft="5dp"
-    android:background="#00ACC1">
-<!--        <Button-->
-<!--            android:id="@+id/the_tich"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:layout_marginLeft="10dp"-->
-<!--            android:layout_marginTop="2dp"-->
-<!--            android:layout_marginRight="10dp"-->
-<!--            android:backgroundTint="#039BE5"-->
-<!--            android:text="THỂ TÍCH(m³)"-->
-<!--            android:textAllCaps="false" />-->
+            <Button
+                android:id="@+id/btnConexao"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#00ACC1"
+                android:text="Kết nối với thiết bị"
+                android:textSize="12dp" />
 
-<!--        <Button-->
-<!--            android:id="@+id/phan_tram"-->
-<!--            android:layout_width="100dp"-->
-<!--            android:layout_height="40dp"-->
-<!--            android:layout_marginLeft="10dp"-->
-<!--            android:layout_marginTop="2dp"-->
-<!--            android:layout_marginRight="10dp"-->
-<!--            android:backgroundTint="#039BE5"-->
-<!--            android:text="V(%)"-->
-<!--            android:textSize="16dp" />-->
-    <TextView
-        android:layout_width="98dp"
-        android:layout_height="30dp"
-        android:text="Thể tích đo:"
-        android:textStyle="bold"
-        android:textSize="17dp"
-        android:gravity="left|center"
-        android:paddingLeft="5dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
-        android:textColor="@color/white"
-        />
+            <Button
+                android:id="@+id/start"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#00ACC1"
+                android:text="nhấn vào để tính toán"
+                android:textSize="12dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:background="#00ACC1">
+                <!--        <Button-->
+                <!--            android:id="@+id/the_tich"-->
+                <!--            android:layout_width="match_parent"-->
+                <!--            android:layout_height="40dp"-->
+                <!--            android:layout_marginLeft="10dp"-->
+                <!--            android:layout_marginTop="2dp"-->
+                <!--            android:layout_marginRight="10dp"-->
+                <!--            android:backgroundTint="#039BE5"-->
+                <!--            android:text="THỂ TÍCH(m³)"-->
+                <!--            android:textAllCaps="false" />-->
 
-    <TextView
-        android:id="@+id/tvthe_tich"
-        android:layout_width="70dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="110dp"
-        android:layout_marginTop="20dp"
-        android:gravity="left|center"
-        android:paddingLeft="5dp"
-        android:text="000.000"
-        android:textColor="@color/white"
-        android:textSize="16dp"
-        android:textStyle="bold" />
+                <!--        <Button-->
+                <!--            android:id="@+id/phan_tram"-->
+                <!--            android:layout_width="100dp"-->
+                <!--            android:layout_height="40dp"-->
+                <!--            android:layout_marginLeft="10dp"-->
+                <!--            android:layout_marginTop="2dp"-->
+                <!--            android:layout_marginRight="10dp"-->
+                <!--            android:backgroundTint="#039BE5"-->
+                <!--            android:text="V(%)"-->
+                <!--            android:textSize="16dp" />-->
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="42dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="left|center"
+                    android:paddingLeft="5dp"
+                    android:text="Thể tích còn trống"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="183dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="2dp"
-        android:gravity="left|center"
-        android:text="m³"
-        android:textSize="16dp"
-        android:paddingLeft="5dp"
-        android:textColor="@color/white"
-        android:textStyle="italic" />
+                <TextView
+                    android:id="@+id/tvthe_tich"
+                    android:layout_width="70dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="60dp"
+                    android:gravity="left|center"
+                    android:paddingLeft="16dp"
+                    android:text="0.00"
+                    android:textColor="@color/white"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="120dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="60dp"
-        android:gravity="left|center"
-        android:text="Chiếm khoảng:"
-        android:textSize="17dp"
-        android:textColor="@color/white"
-        android:paddingLeft="5dp"
-        android:textStyle="bold" />
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="160dp"
+                    android:layout_marginTop="68dp"
+                    android:layout_marginRight="2dp"
+                    android:gravity="left|center"
+                    android:paddingLeft="5dp"
+                    android:text="m³"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    android:textStyle="italic" />
 
-    <TextView
-        android:id="@+id/tvphan_tram"
-        android:layout_width="60dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="135dp"
-        android:layout_marginTop="60dp"
-        android:gravity="left|center"
-        android:paddingLeft="5dp"
-        android:text="000 %"
-        android:textColor="@color/white"
-        android:textSize="17dp"
-        android:textStyle="bold" />
+<!--                <TextView-->
+<!--                    android:layout_width="124dp"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginTop="60dp"-->
+<!--                    android:gravity="left|center"-->
+<!--                    android:paddingLeft="5dp"-->
+<!--                    android:text="Thể tích đã sử dụng"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="13dp"-->
+<!--                    android:textStyle="bold" />-->
 
-</RelativeLayout>
+<!--                <TextView-->
+<!--                    android:id="@+id/tvphan_tram"-->
+<!--                    android:layout_width="40dp"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:layout_marginLeft="138dp"-->
+<!--                    android:layout_marginTop="60dp"-->
+<!--                    android:gravity="left|center"-->
+<!--                    android:paddingLeft="3dp"-->
+<!--                    android:text="000"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="17dp"-->
+<!--                    android:textStyle="bold" />-->
 
-    </LinearLayout>
-</RelativeLayout>
+<!--                <TextView-->
+<!--                    android:layout_width="30dp"-->
+<!--                    android:layout_height="30dp"-->
+<!--                    android:layout_marginLeft="183dp"-->
+<!--                    android:layout_marginTop="60dp"-->
+<!--                    android:layout_marginRight="2dp"-->
+<!--                    android:gravity="left|center"-->
+<!--                    android:paddingLeft="5dp"-->
+<!--                    android:text="m³"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="16dp"-->
+<!--                    android:textStyle="italic" />-->
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
 
     <GridView
         android:paddingTop="5dp"

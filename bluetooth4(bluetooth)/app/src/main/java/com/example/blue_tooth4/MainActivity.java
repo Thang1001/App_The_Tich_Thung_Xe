@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         btnConexao=(Button)findViewById(R.id.btnConexao);
         btnLed1=findViewById(R.id.start);
         thetich=findViewById(R.id.tvthe_tich);
-        percent=findViewById(R.id.tvphan_tram);
+       // percent=findViewById(R.id.tvphan_tram);
         gridView = findViewById(R.id.gridView);
 //        setx = findViewById(R.id.setx);
 //        sety = findViewById(R.id.sety);
@@ -272,7 +272,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                      if(tach[2].charAt(0) == 'c'){
                         String dadosFinals2 = tach[2].substring(1,tamInfomacao2);
-                        percent.setText(dadosFinals2);
+                        //percent.setText(dadosFinals2);
                     }
 //                    dadosBluetooth.replace(0,dadosBluetooth.length(), " ") ;
 //                    dadosCompletos = dadosBluetooth.substring(0,fimInfomaco);
